@@ -41,6 +41,7 @@ app.delete('/api/todos/:id', async (req, res) => {
   res.status(204).end();
 });
 
+// serve the built React app
 const clientDir = path.join(__dirname, '../client/dist');
 app.use(express.static(clientDir));
 app.use((req, res) => res.sendFile(path.join(clientDir, 'index.html')));

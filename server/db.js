@@ -1,5 +1,7 @@
 const { Pool } = require('pg');
 
+// Render gives you a DATABASE_URL. On your laptop there is none,
+// so the separate settings from your .env file are used instead.
 const pool = process.env.DATABASE_URL
   ? new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } })
   : new Pool({
